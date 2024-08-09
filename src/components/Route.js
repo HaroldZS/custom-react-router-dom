@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from 'react';
+import { RouterContext } from './HashRouter';
 
-function route() {
-  return <div>route</div>;
-}
+const Route = ({ path, element }) => {
+  const { location } = useContext(RouterContext);
 
-export { route };
+  return location === path ? element : null;
+};
+
+export default Route;
