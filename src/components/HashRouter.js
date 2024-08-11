@@ -17,7 +17,7 @@ const HashRouter = ({ children }) => {
   }, []);
 
   return (
-    <RouterContext.Provider value={{ location }}>
+    <RouterContext.Provider value={{ location, setLocation }}>
       {children}
     </RouterContext.Provider>
   );
