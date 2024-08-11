@@ -1,16 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import { createContext, useEffect, useState } from "react";
 
 const HashRouter = ({ children }) => {
-  const [location, setLocation] = useState(window.location.hash.replace('#', '') || '/');
+  const [location, setLocation] = useState(
+    window.location.hash.replace("#", "") || "/"
+  );
 
   useEffect(() => {
     const handleHashChange = () => {
-      setLocation(window.location.hash.replace('#', '') || '/');
+      setLocation(window.location.hash.replace("#", "") || "/");
     };
 
-    window.addEventListener('hashchange', handleHashChange);
+    window.addEventListener("hashchange", handleHashChange);
     return () => {
-      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener("hashchange", handleHashChange);
     };
   }, []);
 
@@ -21,5 +23,5 @@ const HashRouter = ({ children }) => {
   );
 };
 
-export const RouterContext = React.createContext();
+export const RouterContext = createContext();
 export default HashRouter;
