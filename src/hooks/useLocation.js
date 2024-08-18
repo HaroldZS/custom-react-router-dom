@@ -4,11 +4,17 @@ const getLocationProps = (location) => {
   const { href } = location;
   const hashIndex = href.indexOf("#");
 
-  const pathname = hashIndex !== -1 ? href.slice(hashIndex + 1) : "";
-  const finalHashIndex = pathname.indexOf("#");
-  const hash = finalHashIndex !== -1 ? pathname.slice(finalHashIndex) : "";
+  const mainPathname = hashIndex !== -1 ? href.slice(hashIndex + 1) : "";
 
-  return { hash, pathname };
+  const otherHashIndex = mainPathname.indexOf("#");
+  const hash = otherHashIndex !== -1 ? mainPathname.slice(otherHashIndex) : "";
+
+  const searchIndex = mainPathname.indexOf("?");
+  const search = searchIndex !== -1 ? mainPathname.slice(searchIndex) : "";
+
+  const pathname = mainPathname.split("?")[0].split("#")[0];
+
+  return { hash, pathname, search };
 };
 
 function useLocation() {
