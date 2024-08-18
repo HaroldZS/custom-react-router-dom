@@ -1,14 +1,10 @@
 import React from "react";
-import useNavigate from "../hooks/useNavigate";
-import { useLocation } from "../hooks/useLocation";
+import { useNavigate } from "../hooks/useNavigate";
 
 function About() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  // navigate("/")
-
-  const location = useLocation();
-  console.log(location);
+  navigate("/")
 
   return <div>About</div>;
 }

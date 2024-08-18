@@ -1,10 +1,10 @@
-import React from 'react';
-import HashRouter from './components/HashRouter';
-import Route from './components/Route';
-import Routes from './components/Routes';
-import { Home } from './pages/Home';
-import { About } from './pages/About';
-import { NotFound } from './pages/NotFound';
+import React from "react";
+import { HashRouter } from "./components/HashRouter";
+import { Route } from "./components/Route";
+import { Routes } from "./components/Routes";
+import { Home } from "./pages/Home";
+import { About } from "./pages/About";
+import { NotFound } from "./pages/NotFound";
 
 function App() {
   return (

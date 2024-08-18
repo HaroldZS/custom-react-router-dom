@@ -1,13 +1,11 @@
-import React, { useContext } from "react";
-import { RouterContext } from "./HashRouter";
+import React from "react";
 
 function Link({ to, children }) {
-  const { setLocation } = useContext(RouterContext);
-
+  
   const handleClick = (e) => {
     e.preventDefault();
     window.history.pushState(null, '', `#${to}`);
-    setLocation(to);
+    window.dispatchEvent(new HashChangeEvent("hashchange"));
   };
 
   return (

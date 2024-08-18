@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 
 const getLocationProps = (location) => {
-  const initialPathname = location.href;
-  const index = initialPathname.indexOf("#");
+  const { href } = location;
+  const hashIndex = href.indexOf("#");
 
-  const pathname = initialPathname.substring(index + 1);
-
-  const hashIndex = pathname.indexOf("#");
-  const hash = hashIndex != -1 ? pathname.substring(hashIndex) : "";
+  const pathname = hashIndex !== -1 ? href.slice(hashIndex + 1) : "";
+  const finalHashIndex = pathname.indexOf("#");
+  const hash = finalHashIndex !== -1 ? pathname.slice(finalHashIndex) : "";
 
   return { hash, pathname };
 };
