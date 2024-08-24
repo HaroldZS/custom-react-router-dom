@@ -14,7 +14,9 @@ const getLocationProps = (location) => {
 
   const pathname = mainPathname.split("?")[0].split("#")[0];
 
-  return { hash, pathname, search };
+  const state = window.history.state;
+
+  return { hash, pathname, search, state };
 };
 
 function useLocation() {

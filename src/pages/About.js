@@ -3,11 +3,11 @@ import { useNavigate } from "../hooks/useNavigate";
 import { useLocation } from "../hooks/useLocation";
 
 function About() {
-  const location = useLocation();
-  console.log(location);
-  // const navigate = useNavigate();
+  // const location = useLocation();
+  // console.log(location);
+  const navigate = useNavigate();
 
-  // navigate("/")
+  navigate("/", { key: "value" });
 
   return <div>About</div>;
 }
