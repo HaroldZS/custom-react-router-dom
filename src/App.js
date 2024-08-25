@@ -5,6 +5,7 @@ import { Routes } from "./components/Routes";
 import { Home } from "./pages/Home";
 import { About } from "./pages/About";
 import { NotFound } from "./pages/NotFound";
+import { UserProfile } from "./pages/UserProfile";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/user/:id" element={<UserProfile />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </HashRouter>
