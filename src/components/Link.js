@@ -1,10 +1,10 @@
 import React from "react";
 
-function Link({ to, children }) {
-  
+function Link({ to, children, state = null }) {
+
   const handleClick = (e) => {
     e.preventDefault();
-    window.history.pushState(null, '', `#${to}`);
+    window.history.pushState(state, "", `#${to}`);
     window.dispatchEvent(new HashChangeEvent("hashchange"));
   };
 

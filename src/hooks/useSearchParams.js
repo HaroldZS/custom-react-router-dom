@@ -20,7 +20,8 @@ function useSearchParams() {
     });
 
     const newLocation = `${location.pathname}?${searchParams.toString()}`;
-    window.history.pushState(null, "", `#${newLocation}`);
+    const state = location.state || null;
+    window.history.pushState(state, "", `#${newLocation}`);
     window.dispatchEvent(new HashChangeEvent("hashchange"));
   };
 
